@@ -1,9 +1,53 @@
 SubProceso link()
-	Escribir "link github";
+	Definir key Como Caracter;
+	Escribir "*******************";
+	Escribir "*** Link GitHub ***";
+	Escribir "*******************";
+	Escribir "";
+	Escribir "Link:";
+	Escribir "https://github.com/CNoctis/UTN-San-Rafael/blob/main/Proyecto_PSeInt/pingpong_fix.psc";
+	Escribir "";
+	Escribir "";
+	Escribir "Precione 1 para volver al menu o cualquier otra tecla para finalizar";
+	Leer key;
+	Si key == '1' Entonces
+		declaracion_variables();
+	FinSi
 FinSubProceso
 
 SubProceso nombres ()
-	Escribir "Nombre de ingrantes";
+	Definir key Como Caracter;
+	Escribir "*************************";
+	Escribir "*** Nombre del equipo ***";
+	Escribir "*************************";
+	Escribir "";
+	Escribir "Equipo alfa buena maravilla onda dinamita escuadron lobo";
+	Escribir "(E.A.B.M.O.D.E.L)";
+	Escribir "";
+	Escribir "";
+	Escribir "****************************";
+	Escribir "*** Nombre de ingrantes *** ";
+	Escribir "****************************";
+	Escribir "";
+	Escribir "G. Hernán Osores";
+	Escribir "G. Enzo Gramajo";
+	Escribir "C. J. Rosas Guaina";
+	Escribir "A. Damián Monza";
+	Escribir "A Nahuel Saravia";
+	Escribir "M. R. Campora Lorenzo";
+	Escribir "S. L. Castellani";
+	Escribir "R. Belén Noceti";
+	Escribir "L. A. Saint Bonnet";
+	Escribir "E Gaudino";
+	Escribir "E Marte";
+	Escribir "";
+	Escribir "";
+	Escribir "Precione 1 para volver al menu o cualquier otra tecla para finalizar";
+	
+	Leer key;
+	Si key == '1' Entonces
+		declaracion_variables();
+	FinSi
 FinSubProceso
 
 Funcion opcion <- menu ()
@@ -17,6 +61,7 @@ Funcion opcion <- menu ()
 	Escribir "2. IA vs IA";
 	Escribir "3. Integrantes del grupo";
 	Escribir "4. GitHub (Código)";
+	Escribir "5. Salir";
 	Leer opcion;
 FinFuncion
 
@@ -212,6 +257,8 @@ SubProceso v_pelota(inijug Por Referencia, finjueg Por Referencia, iniia Por Ref
 	// Verificamos si no se ha realizado un gol en alguno de las dos bandas verticales
 	Si pelX == 1 o pelX == 71 Entonces
 		gol <- 1;
+		Limpiar Pantalla;
+		declaracion_variables();
 	FinSi
 	
 	// Verifica el estado de la pelota si no ha tocado alguna banda de las raquetas
@@ -322,6 +369,7 @@ SubProceso ccampo(campo)
 FinSubProceso
 
 SubProceso declaracion_variables()
+	Limpiar Pantalla;
 	// Declaracioón de valores
 	
 	//Definimos una matriz tipo char
@@ -364,7 +412,7 @@ SubProceso declaracion_variables()
 	Repetir
 		opcion_e <- menu();
 		Limpiar Pantalla;
-	Hasta Que opcion_e > 0  y opcion_e < 5
+	Hasta Que opcion_e > 0  y opcion_e < 6
 	
 	// Acción según la selección
 	Si opcion_e == 1 Entonces
@@ -376,10 +424,15 @@ SubProceso declaracion_variables()
 			Si opcion_e == 3 Entonces
 				nombres();
 			SiNo
-				link();
+				Si opcion_e== 4 Entonces
+					link();
+				FinSi
 			FinSi
 		FinSi
 	FinSi
+	Escribir "********************************";
+	Escribir "*** ¡Gracias por estar aqui! ***";
+	Escribir "********************************";
 	
 FinSubProceso
 
